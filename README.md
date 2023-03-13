@@ -2,18 +2,18 @@
 
 This tool assists GitHub workflow mantainers into enumeration and update of GitHub Actions versioning. Referencing GitHub Actions versions by release tag or commit is considered a better practice than using branch or tag names: it allows consistency in your supply chain and avoids uncontrolled changes from external repositories. 
 
+# Installation
+
+Since this is purely a shell script (bash), you can either clone this repository and execute it directly (`./avs`), or copying it to a folder on your path to make it available as a command (for example, `<sudo> cp avs /usr/bin/avs`). 
+
+Execution permissions should be already granted, but if that is not the case, you can simply enable them by `chmod +x avs`. 
+
 ## Usage
 
 `avs [-h] [-p]`
 
 `-h`: Opens the help menu.
 `-p`: Defines the path for a directory or file to be scanned (default: ./scan/)
-
-# Installation
-
-Since this is a pure shell script (Bash), you can either clone this repository and execute it directly (`./avs`), or copying it to a folder on your path to make it available as a command (for example, `<sudo> cp avs /usr/bin/avs`). 
-
-Execution permissions should be already granted, but if that is not the case, you can simply enable them by `chmod +x avs`. 
 
 
 ## How does it work?
