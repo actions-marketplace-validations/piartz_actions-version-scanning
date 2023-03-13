@@ -9,6 +9,13 @@ This tool assists GitHub workflow mantainers into enumeration and update of GitH
 `-h`: Opens the help menu.
 `-p`: Defines the path for a directory or file to be scanned (default: ./scan/)
 
+# Installation
+
+Since this is a pure shell script (Bash), you can either clone this repository and execute it directly (`./avs`), or copying it to a folder on your path to make it available as a command (for example, `<sudo> cp avs /usr/bin/avs`). 
+
+Execution permissions should be already granted, but if that is not the case, you can simply enable them by `chmod +x avs`. 
+
+
 ## How does it work?
 
 The scanner filters out lines starting with `uses: ` that comply with the format to call a GitHub action. It then checks the data after the `@` character that references a version for such action. 
