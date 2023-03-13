@@ -4,7 +4,7 @@ This tool assists GitHub workflow mantainers into enumeration and update of GitH
 
 ## Usage
 
-`scanner [-h] [-p]`
+`avs [-h] [-p]`
 
 `-h`: Opens the help menu.
 `-p`: Defines the path for a directory or file to be scanned (default: ./scan/)
