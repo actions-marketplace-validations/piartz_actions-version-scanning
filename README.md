@@ -9,7 +9,7 @@ This tool assists GitHub workflow mantainers into enumeration and update of GitH
 `-h`: Opens the help menu.
 `-p`: Defines the path for a directory or file to be scanned (default: ./scan/)
 
-## Logic explanation
+## How does it work?
 
 The scanner filters out lines starting with `uses: ` that comply with the format to call a GitHub action. It then checks the data after the `@` character that references a version for such action. 
 
