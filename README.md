@@ -1,14 +1,41 @@
 # AVS: Actions Version Scanner
 
-This tool assists GitHub workflow mantainers into enumeration and update of GitHub Actions versioning. Referencing GitHub Actions versions by release tag or commit is considered a better practice than using branch or tag names: it allows consistency in your supply chain and avoids uncontrolled changes from external repositories. 
+This action assists GitHub workflow mantainers into enumeration and update of GitHub Actions versioning. Referencing GitHub Actions versions by release tag or commit is considered a better practice than using branch or tag names: it allows consistency in your supply chain and avoids uncontrolled changes from external repositories. 
 
-# Installation
+## Using the action
+
+Reference the action as usual. Remember that referencing to a commit hash after the `@` is considered a best practice. 
+
+```yaml
+steps:
+  # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+  - uses: actions/checkout@v3
+  - uses: piartz/actions-version-scanning@v1
+```
+
+If no arguments are passed to the action, it will by default look inside your `.github/workflows` directory. To perform the scan in another directory or just on a specific file, you can pass it as follows:
+
+Directory:
+```yaml
+- uses: piartz/actions-version-scanning@add-action
+  with:
+    path: 'alternative-directory'
+```
+
+File:
+```yaml
+- uses: piartz/actions-version-scanning@add-action
+  with:
+    path: 'alternative-directory/specific-file.yml'
+```
+
+## Using as a CLI tool
 
 Since this is purely a shell script (bash), you can either clone this repository and execute it directly (`./avs`), or copying it to a folder on your path to make it available as a command (for example, `<sudo> cp avs /usr/bin/avs`). 
 
 Execution permissions should be already granted, but if that is not the case, you can simply enable them by `chmod +x avs`. 
 
-## Usage
+### Help menu as a CLI tool
 
 `avs [-h] [-p]`
 
