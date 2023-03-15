@@ -1,0 +1,16 @@
+name: 'AVS - Actions Version Scanning'
+description: 'Visualization of actions versioning for GitHub workflows.'
+inputs:
+  path:
+    description: 'File or directory to be scanned.'
+    required: false
+    default: '.github/workflows/'
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: 'piartz/actions-version-scanning'
+        path: avs
+    - run: chmod +x ./avs/avs && ./avs/avs -p "${{ inputs.path }}"
+      shell: bash

@@ -69,4 +69,3 @@ echo
 
 # Uncommon edge case: 
 # a branch name with 40 chars where alphanumeric characters dont include [g-zG-Z] characters.
-
