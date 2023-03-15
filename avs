@@ -1,8 +1,6 @@
 #!/bin/bash
 bold=$(tput bold)
 normal=$(tput sgr0)
-DEFAULT_CONFIG_FILE=./CONFIG
-CONFIG_FILE=$DEFAULT_CONFIG_FILE
 YAML_PATH=./scan/
 
 function help () {
@@ -44,8 +42,6 @@ if [ $# -gt 0 ];
 then
     >&2 echo "Argument ${1} not recognized."
 fi
-
-source $CONFIG_FILE
 
 echo
 echo "${bold}Action versions not referencing a commit hash${normal}"
