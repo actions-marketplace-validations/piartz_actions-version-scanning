@@ -1,8 +1,6 @@
 #!/bin/bash
 bold=$(tput bold)
 normal=$(tput sgr0)
-DEFAULT_CONFIG_FILE=./CONFIG
-CONFIG_FILE=$DEFAULT_CONFIG_FILE
 YAML_PATH=./scan/
 
 function help () {
