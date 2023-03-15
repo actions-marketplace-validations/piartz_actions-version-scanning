@@ -11,5 +11,5 @@ runs:
     - uses: actions/checkout@v3
       with:
         repository: 'piartz/actions-version-scanning'
-    - run: chmod +x avs && ./avs -p "${{ inputs.path }}"
+    - run: pwd && ls -la && chmod +x avs && ./avs -p "${{ inputs.path }}"
       shell: bash
