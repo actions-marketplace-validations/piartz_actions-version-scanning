@@ -1,6 +1,6 @@
 # AVS: Actions Version Scanner
 
-This action assists GitHub workflow mantainers into enumeration and update of GitHub Actions versioning. Referencing GitHub Actions versions by release tag or commit is considered a better practice than using branch or tag names: it allows consistency in your supply chain and avoids uncontrolled changes from external repositories. 
+This action assists GitHub workflow mantainers into enumeration and update of GitHub Actions versioning. Referencing GitHub Actions versions by release tag or commit is considered a better practice than using branch or tag names: it allows consistency in your supply chain and avoids uncontrolled changes from external repositories. This tool provides an output of which actions are referred by commit hash, and which ones don't. 
 
 ## Using the action
 
