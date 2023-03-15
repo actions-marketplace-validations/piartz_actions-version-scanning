@@ -1,4 +1,6 @@
 #!/bin/bash
+set -o pipefail
+
 bold=$(tput bold)
 normal=$(tput sgr0)
 YAML_PATH=./scan/
@@ -49,13 +51,13 @@ echo "-------------"
 echo 
 
 # Looking for strings after an '@' outside of the default commit length (40 chars)
-grep -Enr '\buses\b:[ \t]+.+\/.+@\b.{1,39}\b' "${YAML_PATH}"
-grep -Enr '\buses\b:[ \t]+.+\/.+@\b.{41,255}\b' "${YAML_PATH}"
+grep -Enr '\buses\b:[ \t]+.+\/.+@\b.{1,39}\b' "${YAML_PATH}" || [[ $? == 1 ]]
+grep -Enr '\buses\b:[ \t]+.+\/.+@\b.{41,255}\b' "${YAML_PATH}" || [[ $? == 1 ]]
 
 # For the 40 chars use case:
 # Commit hashes only use lowcase non-numeric chars from a-f
 # Piping the 40 char result to exclude hash compliant occurences
-grep -Enr '\buses\b:[ \t]+.+\/.+@\b.{40}\b' "${YAML_PATH}" | grep -Ev '\buses\b:[ \t]+.+\/.+@\b[a-f0-9]{40}\b'
+(grep -Enr '\buses\b:[ \t]+.+\/.+@\b.{40}\b' "${YAML_PATH}" || [[ $? == 1 ]] ) | grep -Ev '\buses\b:[ \t]+.+\/.+@\b[a-f0-9]{40}\b' || [[ $? == 1 ]]
 
 
 echo
@@ -63,7 +65,7 @@ echo
 echo "${bold}Action versions referencing a commit hash${normal}"
 echo "-------------"
 echo
-grep -Enr '\buses\b:[ \t]+.+\/.+@\b.{40}\b' "${YAML_PATH}" | grep -E '\buses\b:[ \t]+.+\/.+@\b[a-f0-9]{40}\b'
+(grep -Enr '\buses\b:[ \t]+.+\/.+@\b.{40}\b' "${YAML_PATH}" || [[ $? == 1 ]]) | grep -E '\buses\b:[ \t]+.+\/.+@\b[a-f0-9]{40}\b' || [[ $? == 1 ]]
 
 # Uncommon edge case: 
 # a branch name with 40 chars where alphanumeric characters dont include [g-zG-Z] characters.
