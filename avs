@@ -45,8 +45,6 @@ then
     >&2 echo "Argument ${1} not recognized."
 fi
 
-source $CONFIG_FILE
-
 echo
 echo "${bold}Action versions not referencing a commit hash${normal}"
 echo "-------------"
