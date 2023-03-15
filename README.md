@@ -17,14 +17,14 @@ If no arguments are passed to the action, it will by default look inside your `.
 
 Directory:
 ```yaml
-- uses: piartz/actions-version-scanning@add-action
+- uses: piartz/actions-version-scanning@v1
   with:
     path: 'alternative-directory'
 ```
 
 File:
 ```yaml
-- uses: piartz/actions-version-scanning@add-action
+- uses: piartz/actions-version-scanning@v1
   with:
     path: 'alternative-directory/specific-file.yml'
 ```
