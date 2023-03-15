@@ -10,6 +10,6 @@ runs:
   steps:
     - uses: actions/checkout@v3
       with:
-        repository: 'piartz/actions-version-scanning@main'
+        repository: 'piartz/actions-version-scanning'
     - run: chmod +x avs && ./avs -p "${{ inputs.path }}"
       shell: bash
