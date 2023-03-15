@@ -12,5 +12,5 @@ runs:
       with:
         repository: 'piartz/actions-version-scanning'
         path: avs
-    - run: pwd && ls -la && chmod +x avs && ./avs/avs -p "${{ inputs.path }}"
+    - run: pwd && ls -la && chmod +x ./avs/avs && ./avs/avs -p "${{ inputs.path }}"
       shell: bash
