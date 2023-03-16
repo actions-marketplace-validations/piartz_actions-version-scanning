@@ -10,21 +10,21 @@ Reference the action as usual. Remember that referencing to a commit hash after 
 steps:
   # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
   - uses: actions/checkout@v3
-  - uses: piartz/actions-version-scanning@v1
+  - uses: piartz/actions-version-scanning@v0.1
 ```
 
 If no arguments are passed to the action, it will by default look inside your `.github/workflows` directory. To perform the scan in another directory or just on a specific file, you can pass it as follows:
 
 Directory:
 ```yaml
-- uses: piartz/actions-version-scanning@v1
+- uses: piartz/actions-version-scanning@v0.1
   with:
     path: 'alternative-directory'
 ```
 
 File:
 ```yaml
-- uses: piartz/actions-version-scanning@v1
+- uses: piartz/actions-version-scanning@v0.1
   with:
     path: 'alternative-directory/specific-file.yml'
 ```
